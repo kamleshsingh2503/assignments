@@ -1,0 +1,7 @@
+package com.qaplatform.controllers;
+
+@RestController
+@RequestMapping("/api/v1")
+public class QuestionController {
+
+}

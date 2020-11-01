@@ -1,0 +1,22 @@
+CREATE SEQUENCE subtopic_id_seq start 1001;
+CREATE TABLE subtopic (
+    id bigint NOT NULL DEFAULT nextval('subtopic_id_seq'),
+	subtopicname varchar NOT NULL,
+	topicid bigint,
+	primary key(id),
+	CONSTRAINT fk_topic FOREIGN KEY(topicid) 
+	  REFERENCES topic(id)
+);
+ALTER SEQUENCE subtopic_id_seq OWNED BY subtopic.id;
+
+CREATE SEQUENCE topic_id_seq start 101;
+CREATE TABLE topic (
+    id bigint NOT NULL DEFAULT nextval('topic_id_seq'),
+	topicname varchar not null,
+	primary key(id)
+);
+ALTER SEQUENCE topic_id_seq OWNED BY topic.id;
+
+drop table comapny;
+
+

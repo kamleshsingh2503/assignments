@@ -1,0 +1,23 @@
+package com.qaplatform.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.qaplatform.dao.CompanyRepository;
+import com.qaplatform.models.Company;
+
+@Component
+public class CompanyService {
+
+	@Autowired
+	private CompanyRepository companyRepository;
+	
+    public Company addCompany(Company company) {
+        return companyRepository.save(company);
+    }
+    
+    public Company deleteCompany(long companyId) {
+        companyRepository.deleteById(companyId);
+		return null;
+    }
+}

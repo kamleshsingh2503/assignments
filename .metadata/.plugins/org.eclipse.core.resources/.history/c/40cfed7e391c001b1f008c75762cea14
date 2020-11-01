@@ -1,0 +1,5 @@
+package com.qaplatform.controllers;
+
+public class TopicController {
+
+}

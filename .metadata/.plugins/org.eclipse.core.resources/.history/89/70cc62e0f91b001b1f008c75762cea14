@@ -1,0 +1,23 @@
+package com.qaplatform.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.qaplatform.models.Question;
+import com.qaplatform.service.QuestionService;
+
+@Controller
+@RequestMapping("/qaPlatform/")
+public class QuestionController {
+
+	@Autowired
+	private QuestionService questionService;
+	
+	@PostMapping("/addQuestions")
+	public Question addQuestion(@RequestBody Question question ) {
+		return questionService.createEmployee(question);
+	}
+	
+}

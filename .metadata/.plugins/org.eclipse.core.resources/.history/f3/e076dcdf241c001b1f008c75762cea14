@@ -1,0 +1,46 @@
+package com.qaplatform.controllers;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.qaplatform.dao.CompanyRepository;
+import com.qaplatform.models.Company;
+import com.qaplatform.service.CompanyService;
+
+@Controller
+@RequestMapping("/company")
+public class CompanyController {
+	
+	@Autowired
+	private CompanyService companyService;
+	
+	@GetMapping("/getCompany")
+	public ResponseEntity getCompany(@PathVariable long id) {
+		return ResponseEntity.ok(companyService.getCompany(id));
+	}
+
+	@PostMapping("/addCompany")
+	public ResponseEntity addCompany(@RequestBody Company company) {
+		return ResponseEntity.ok(companyService.addCompany(company));
+	}
+	
+	@DeleteMapping("/deleteCompany/{id}")
+	public ResponseEntity deleteCompany(@PathVariable long id ) {
+		return ResponseEntity.ok(companyService.deleteCompany(id));
+	}
+	
+	@PutMapping("/updateCompany/{id}")
+	public ResponseEntity updateCompany(@RequestBody Company company, @PathVariable long id) {
+		return companyService.updateCompany(company, id);
+	}
+}

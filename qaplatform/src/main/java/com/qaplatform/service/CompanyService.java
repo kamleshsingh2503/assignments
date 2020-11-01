@@ -1,0 +1,45 @@
+package com.qaplatform.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+
+import com.qaplatform.dao.CompanyRepository;
+import com.qaplatform.models.Company;
+
+@Component
+public class CompanyService {
+
+	@Autowired
+	private CompanyRepository companyRepository;
+
+	public Company addCompany(Company company) {
+		return companyRepository.save(company);
+	}
+
+	public ResponseEntity getCompany(long id) {
+		Optional<Company> companyOptional = companyRepository.findById(id);
+
+		if (!companyOptional.isPresent())
+			return ResponseEntity.notFound().build();
+		else
+			return ResponseEntity.ok(companyOptional);
+	}
+
+	public Company deleteCompany(long companyId) {
+		companyRepository.deleteById(companyId);
+		return null;
+	}
+
+	public ResponseEntity updateCompany(Company company, long id) {
+		Optional<Company> companyOptional = companyRepository.findById(id);
+
+		if (!companyOptional.isPresent())
+			return ResponseEntity.notFound().build();
+		else
+			return ResponseEntity.ok(companyRepository.save(company));
+
+	}
+}

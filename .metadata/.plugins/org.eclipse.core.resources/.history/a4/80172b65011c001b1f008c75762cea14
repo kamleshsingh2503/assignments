@@ -1,0 +1,17 @@
+package com.qaplatform.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+
+
+@Component
+public class CompanyService {
+
+	@Autowired
+	private QuestionRepository questionRepository;
+	
+    public Question createEmployee(Question question) {
+        return questionRepository.save(question);
+    }
+}

@@ -1,0 +1,10 @@
+package com.qaplatform.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.qaplatform.models.Question;
+
+@Repository
+public interface QuestionRepository extends JpaRepository<Question, Long> {
+
+}

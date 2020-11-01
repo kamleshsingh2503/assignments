@@ -1,0 +1,11 @@
+package com.qaplatform.models;
+
+public class Company {
+	
+	private long id;
+	private String companyName;
+	
+	
+	
+
+}

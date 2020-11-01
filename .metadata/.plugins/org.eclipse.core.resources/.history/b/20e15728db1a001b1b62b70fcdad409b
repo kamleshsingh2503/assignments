@@ -1,0 +1,23 @@
+package com.qaplatform.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.qaplatform.repository.QuestionRepository;
+
+@RestController
+@RequestMapping("/api/v1")
+public class QuestionController {
+	
+	@Autowired
+	private QuestionRepository questionRepository;
+	
+	@PostMapping("/questions")
+    public Employee createEmployee(@Valid @RequestBody Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+
+}

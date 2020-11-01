@@ -1,0 +1,5 @@
+package com.qaplatform.dao;
+
+public class CompanyRepository {
+
+}

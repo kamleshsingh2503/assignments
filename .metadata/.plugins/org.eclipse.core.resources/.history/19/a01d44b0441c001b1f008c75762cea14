@@ -1,0 +1,29 @@
+package com.qaplatform.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.qaplatform.service.TopicService;
+
+@Controller
+@RequestMapping("/topic")
+public class TopicController {
+	
+	@Autowired
+	private TopicService service;
+	
+	@GetMapping("/getAllTopics")
+	public ResponseEntity getAllTopics() {
+		return service.getAllTopics();
+	} 	
+	
+	@GetMapping("/getTopicsById")
+	public ResponseEntity getAllTopics() {
+		return service.getAllTopics();
+	} 	
+	
+	
+}

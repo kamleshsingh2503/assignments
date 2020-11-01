@@ -1,0 +1,15 @@
+package com.qaplatform.models;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="questions")
+public class Question {
+		
+	private long id;
+	private String questionText;
+	
+	
+
+}

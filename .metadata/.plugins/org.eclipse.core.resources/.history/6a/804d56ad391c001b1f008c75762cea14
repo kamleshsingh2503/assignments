@@ -1,0 +1,8 @@
+package com.qaplatform.service;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class TopicService {
+
+}

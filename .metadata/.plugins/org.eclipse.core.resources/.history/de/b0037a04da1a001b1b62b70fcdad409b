@@ -1,0 +1,10 @@
+package com.qaplatform.models;
+
+import javax.persistence.Entity;
+
+@Entity
+@Table(name="questions")
+public class Question {
+	
+
+}

@@ -1,0 +1,9 @@
+package com.qaplatform.models;
+
+public class Topic {
+
+	private long topicId;
+	private String topicName;
+	
+	
+}

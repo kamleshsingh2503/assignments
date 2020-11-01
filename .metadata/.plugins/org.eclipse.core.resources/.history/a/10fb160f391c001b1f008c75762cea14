@@ -1,0 +1,35 @@
+package com.qaplatform.models;
+
+public class Topic {
+
+	private long topicId;
+	private String topicName;
+
+	public Topic() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Topic(long topicId, String topicName) {
+		super();
+		this.topicId = topicId;
+		this.topicName = topicName;
+	}
+
+	public long getTopicId() {
+		return topicId;
+	}
+
+	public void setTopicId(long topicId) {
+		this.topicId = topicId;
+	}
+
+	public String getTopicName() {
+		return topicName;
+	}
+
+	public void setTopicName(String topicName) {
+		this.topicName = topicName;
+	}
+
+}

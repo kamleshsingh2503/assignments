@@ -1,0 +1,52 @@
+package com.qaplatform.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+public class Company {
+
+	private long id;
+	private String companyName;
+
+	public Company(long id, String companyName) {
+		super();
+		this.id = id;
+		this.companyName = companyName;
+	}
+
+	public Company() {
+
+	}
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "company_id", nullable = false)
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	@Column(name = "companyname", nullable = false)
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	@Override
+	public String toString() {
+		return "Company [id=" + id + ", companyName=" + companyName + "]";
+	}
+
+	
+}

@@ -1,0 +1,51 @@
+package com.qaplatform.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Topic {
+
+	private long id;
+	private String topicName;
+
+	public Topic() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Topic(long topicId, String topicName) {
+		super();
+		this.topicId = topicId;
+		this.topicName = topicName;
+	}
+
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	public long getTopicId() {
+		return topicId;
+	}
+
+	public void setTopicId(long topicId) {
+		this.topicId = topicId;
+	}
+
+	@Column(name = "topicname", nullable = false)
+	public String getTopicName() {
+		return topicName;
+	}
+
+	public void setTopicName(String topicName) {
+		this.topicName = topicName;
+	}
+
+	@Override
+	public String toString() {
+		return "Topic [topicId=" + topicId + ", topicName=" + topicName + "]";
+	}
+	
+
+}
